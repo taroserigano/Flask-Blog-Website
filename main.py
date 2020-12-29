@@ -24,8 +24,8 @@ mail = Mail(app)
 app.config['SECRET_KEY'] = 'top-secret!'
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'kim.13charls@gmail.com'
-app.config['MAIL_PASSWORD'] = 'tarodesu123'
+app.config['MAIL_USERNAME'] = '<ENTER YOUR EMAIL>'
+app.config['MAIL_PASSWORD'] = '<ENTER YOUR PASSWORD>'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
@@ -184,7 +184,7 @@ def contact():
         phone = request.form['phone']
         recipient = request.form['recipient']
         message = request.form['message']
-        msg = Message('New email from the Blog Website!', sender='kim.13charls@gmail.com', recipients=[recipient])
+        msg = Message('New email from the Blog Website!', sender='<YOUR EMAIL>', recipients=[recipient])
         msg.body = (f"Name: {name} \nPhone Number: {phone} \nEmail {recipient} \nMessage: {message}")
         mail.send(msg)
         flash(f'Thanks! Your email was successfully sent to {recipient}!')
